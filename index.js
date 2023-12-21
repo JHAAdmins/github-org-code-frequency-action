@@ -62,7 +62,7 @@ async function getRepos(repoArray) {
     const query = `
       query ($owner: String!, $cursorID: String) {
         organization(login: $owner) {
-          repositories(first: 100, after: $cursorID) {
+          repositories(first: 100, after: $cursorID, privacy: INTERNAL) {
             nodes {
               name
               createdAt
